@@ -42,18 +42,18 @@ WhatsApp
 
 #### 4: FrontEnd выполнен на React  (Single-page application)
 
-![login](https://github.com/olegvpc/laravel-riit/blob/main/images/react.png?raw=true)
+![login](https://github.com/olegvpc/react-whatsApp/blob/main/src/images/login.png?raw=true)
 
 #### 4.1 Карточки всех контактов и инфо о владельце токена загружаются и отображаются при первом входе на страницу
 #### 4.2 Пока не выбран контакт для переговорной комнаты поле Input для сообщения не активно 
 
-![firstView](https://github.com/olegvpc/laravel-riit/blob/main/images/react.png?raw=true)
+![firstView](https://github.com/olegvpc/eact-whatsApp/blob/main/src/images/firstView.png?raw=true)
 
 #### 4.3 Контакт для переговорной комнаты можно выбрать из списка контактов или через ввод модьного номера (при этом есть верификация ввода по номерам и 11 знаков)
 
 #### 5: После выбора контакта в переговорную комнату подкачиваются его Имя, Аватар и 10 последних сообщений
 #### 6: При отправке нового сообщения происходит рендеринг компонента чата
-![foundedUser](https://github.com/olegvpc/laravel-riit/blob/main/images/validation.png?raw=true)
+![foundedUser](https://github.com/olegvpc/react-whatsApp/blob/main/src/images/foundedUser.png?raw=true)
 #### 7:Чтобы прочитать ответное сообщение требуется вручную перезагрузить чат (выбрав того же контакта или выполнив поиск с номером телефона)
 
 
