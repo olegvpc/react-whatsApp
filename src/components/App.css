@@ -1,0 +1,32 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Helvetica;
+}
+
+
+p{
+  font-weight: 300 !important;
+
+}
+
+.App{
+  background-color: #66C15D;
+  height: 100vh;
+  /* width: 100%; */
+  /* places item center */
+  display: grid;
+  place-items: center;
+}
+
+.app_body{
+  display: flex;
+  /* margin: 3px;
+  width: 100%;
+  height: 100%; */
+  width: 99vw;
+  height: 99vh;
+  background-color: #ededed;
+  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.7);
+}
