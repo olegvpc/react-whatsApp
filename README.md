@@ -47,7 +47,7 @@ WhatsApp
 #### 4.1 Карточки всех контактов и инфо о владельце токена загружаются и отображаются при первом входе на страницу
 #### 4.2 Пока не выбран контакт для переговорной комнаты поле Input для сообщения не активно 
 
-![firstView](https://github.com/olegvpc/eact-whatsApp/blob/main/src/images/firstView.png?raw=true)
+![firstView](https://github.com/olegvpc/react-whatsApp/blob/main/src/images/firstView.png?raw=true)
 
 #### 4.3 Контакт для переговорной комнаты можно выбрать из списка контактов или через ввод модьного номера (при этом есть верификация ввода по номерам и 11 знаков)
 
