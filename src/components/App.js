@@ -82,7 +82,12 @@ function App() {
   }
 
   function sendMessage (id, message) {
-    sendNewMessage (id, message)
+    return sendNewMessage (id, message)
+    .then((resp) => {
+      // console.log(resp);
+      return resp;
+    })
+    .catch(err => console.log(`Ошибка API при отправке сообщения: ${err}`))
   }
 
   return (

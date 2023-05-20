@@ -1,13 +1,13 @@
 import "./Chat.css";
-import { Avatar, IconButton } from "@material-ui/core";
-import {
-  AttachFile,
-  SearchOutlined,
-  MoreVert,
-  // InsertEmoticonIcon,
-} from "@material-ui/icons";
-import MoodIcon from "@material-ui/icons/Mood";
-import MicNoneIcon from "@material-ui/icons/MicNone";
+// import { Avatar, IconButton } from "@material-ui/core";
+// import {
+//   AttachFile,
+//   SearchOutlined,
+//   MoreVert,
+//   // InsertEmoticonIcon,
+// } from "@material-ui/icons";
+// import MoodIcon from "@material-ui/icons/Mood";
+// import MicNoneIcon from "@material-ui/icons/MicNone";
 import React, { useState, useEffect } from "react";
 import useFormAndValidation from '../../hooks/useFormAndValidation';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
@@ -24,23 +24,34 @@ function Chat({
   const [roomName, setRoomName] = useState("");
   const [messages, setMessages] = useState([]);
 
-
+  // console.count('RENDER Chat-component')
   useEffect(()=>{
     setRoomName(roomContact);
     setMessages(roomMessages);
+    
     // console.log(roomMessages);
     // eslint-disable-next-line
   }, [roomContact, JSON.stringify(roomMessages)])
 
-  // useEffect(()=>{
-  //   console.log(values.message)
-  // }, [values.message])
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("click SEND", values.message)
+    // console.log("click SEND", values.message)
     if(values.message){
-      sendMessage(roomName.chatId, values.message)
+      const response = sendMessage(roomName.chatId, values.message);
+      const newMessage =  {
+        "type": "outgoing",
+        "idMessage": response.idMessage,
+        "timestamp": new Date().toString(),
+        "typeMessage": "textMessage",
+        "chatId": "79037202775@c.us",
+        "textMessage": values.message,
+        "statusMessage": "read",
+        "sendByApi": true
+    };
+      setMessages(prev => [newMessage, ...prev]);
+      // console.log(messages)
+
     }
     setValues('')
 
@@ -50,28 +61,25 @@ function Chat({
   return (
     <div className="chat">
       <div className="chat_header">
-        <Avatar src={roomName?.avatar} />
+        <div className="chat_header_icon-avatar-container">
+           <img className="chat_header_icon-avatar" src={roomName?.avatar} alt="Avatar roomMeeting" />
+        </div>
+       
 
         <div className="chat_headerInfo">
           <h3>{roomName?.name}</h3>
           <p>
-            last seen at{" "}
-            {/* {new Date(
-              messages[messages.length - 1]?.timestamp?.toDate()
-            ).toUTCString()} */}
+            last seen at: {" "}
+            {/* {new Date(messages[messages.length - 1]?.timestamp).getHours().toString()}:{new Date(messages[messages.length - 1]?.timestamp).getMinutes().toString()
+            } */}
           </p>
         </div>
 
         <div className="chat_headerRight">
-          <IconButton>
-            <SearchOutlined />
-          </IconButton>
-          <IconButton>
-            <AttachFile />
-          </IconButton>
-          <IconButton>
-            <MoreVert />
-          </IconButton>
+          <button className="chat_header_icon chat_header_icon-search" />
+          <button className="chat_header_icon chat_header_icon-clip" />
+          <button className="chat_header_icon chat_header_icon-dots" />
+
         </div>
       </div>
       {/* chat body */}
@@ -97,7 +105,7 @@ function Chat({
 
       {/* chat footer */}
       <div className="chat_footer">
-        <MoodIcon />
+        <button className="chat_header_icon chat_header_icon-face"/>
         <form 
         // onSubmit={handleSubmit}
         >
@@ -117,7 +125,7 @@ function Chat({
             Send
           </button>
         </form>
-        <MicNoneIcon />
+       <button className="chat_header_icon chat_header_icon-mic"/>
       </div>
     </div>
   );

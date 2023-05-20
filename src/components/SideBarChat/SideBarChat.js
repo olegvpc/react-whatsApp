@@ -1,6 +1,6 @@
 import "./SideBarChat.css";
 import React, { useState, useEffect } from "react";
-import { Avatar } from "@material-ui/core";
+// import { Avatar } from "@material-ui/core";
 
 const SideBarChat = ({
    id, 
@@ -24,7 +24,10 @@ const SideBarChat = ({
 
   return (
     <button className="sidebarChat" onClick={handleChoiceUser}>
-      <Avatar src={avatar} />
+        <div className="chat_header_icon-avatar-container">
+           <img className="chat_header_icon-avatar" src={avatar} alt="Avatar of client" />
+        </div>
+      {/* <Avatar src={avatar} /> */}
       <div className="sidebarChat_info">
         <h3
           style={{
