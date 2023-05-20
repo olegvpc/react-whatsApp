@@ -56,6 +56,10 @@ WhatsApp
 ![foundedUser](https://github.com/olegvpc/react-whatsApp/blob/main/src/images/foundedUser.png?raw=true)
 #### 7: Чтобы прочитать ответное сообщение требуется вручную перезагрузить чат (выбрав того же контакта или выполнив поиск с номером телефона)
 
+### Выполнен деплой проекта в Public - GitHub-Pages
+```
+https://olegvpc.github.io/react-whatsApp/
+```
 
 ### Установка FrontEnd (если запускается локально)
 * 1: clone repository

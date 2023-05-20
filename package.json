@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/olegvpc/react-whatsApp.git"
   },
-  "homepage": "https://olegvpc.github.io/react-whatsApp",
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
